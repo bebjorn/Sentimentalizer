@@ -1,5 +1,7 @@
-matrix = textread('books_pos');
-matrix2 = textread('books_neg');
+path = '../../data/output/';
+
+matrix = textread(strcat(path,'books_pos'));
+matrix2 = textread(strcat(path,'books_neg'));
 
 matrix = [matrix,ones(1000,1)];
 matrix2 = [matrix2,ones(1000,1)];
