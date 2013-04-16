@@ -1,0 +1,1 @@
+[correctness] = crossValidation('books_pso', matrix2, 10)
