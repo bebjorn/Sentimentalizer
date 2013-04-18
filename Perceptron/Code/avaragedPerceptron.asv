@@ -1,4 +1,4 @@
-function [ w ] = perceptron( X, Y , maxIter)
+function [ w ] = avaragedPerceptron( X, Y , maxIter)
     % Require: X (n*d) matrix where xi = X(i; :) belongs to R(d) 
     % with label yi = Y (i) 2 f1; +1g
     w = randn(length(X(1,:)), 1);
@@ -11,6 +11,8 @@ function [ w ] = perceptron( X, Y , maxIter)
             if sign(w' * X(i,:)') ~= Y(i)  % y(i) x(i) check correct
                 w = w + alpha * Y(i) * X(i,:)';
                 not_converged = true;
+                average_weight = (maxIter*T - c) / (N*T);
+                wa = wa + average_weight * (f(x, y) - f(x, guess));
             end
         end
         iter_count = iter_count + 1;
