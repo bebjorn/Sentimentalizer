@@ -19,7 +19,7 @@ count = 0;
 for k = 1:testLength:trainLength
     a = [matrix1([1:1:k-1, k+testLength:1:m1Length],:);matrix2([1:1:k-1, k+testLength:1:m1Length], :)];
     test = [matrix1([k:1:k+testLength],:);matrix2([k:1:k+testLength], :)];
-    w = perceptron(a,learnMatrix);
+    w = perceptron(a,learnMatrix, 100);
     for i = 1 : testLength*2,
         if sign(w' * test(i,:)') == testMatrix(i)  % y(i) x(i) check correct
             count = count + 1;
