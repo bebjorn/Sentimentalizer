@@ -1,9 +1,12 @@
 function [ correctness ] = outOfDomainValidation(testPos, testNeg, learnPos, learnNeg, folds)
 %CROSSVALIDATION Summary of this function goes here
 %   Detailed explanation goes here
-path = '../../data/output/';
+path = '../../data/tfidf/';
 matrix1 = textread(strcat(path,learnPos));
 matrix2 = textread(strcat(path,learnNeg));
+
+%matrix1 = matrix1 ~= 0;
+%matrix2 = matrix2 ~= 0;
 
 testMatrix1 = textread(strcat(path,testPos));
 testMatrix2 = textread(strcat(path,testNeg));

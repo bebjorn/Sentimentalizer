@@ -1,5 +1,5 @@
 function [ correctness, count ] = crossValidationCategory(folds)
-path = '../../data/output/';
+path = '../../data/tfidf/';
 mBooks = [textread(strcat(path,'books_neg'));textread(strcat(path,'books_pos'))];
 mCamera = [textread(strcat(path,'camera_neg'));textread(strcat(path,'camera_pos'))];
 mDvd = [textread(strcat(path,'dvd_neg'));textread(strcat(path,'dvd_pos'))];
@@ -7,7 +7,14 @@ mHealth = [textread(strcat(path,'health_neg'));textread(strcat(path,'health_pos'
 mMusic = [textread(strcat(path,'music_neg'));textread(strcat(path,'music_pos'))];
 mSoftware = [textread(strcat(path,'software_neg'));textread(strcat(path,'software_pos'))];
 
-m1Length = 1820;
+%mBooks = mBooks ~= 0;
+%mCamera = mCamera ~= 0;
+%mDvd = mDvd ~= 0;
+%mHealth = mHealth ~= 0;
+%mMusic = mMusic ~= 0;
+%mSoftware = mSoftware ~= 0;
+
+m1Length = 1800;
 testLength = m1Length/folds;
 trainLength = m1Length-testLength;
 
