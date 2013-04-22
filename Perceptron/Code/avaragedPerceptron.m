@@ -6,10 +6,9 @@ function [ wa ] = avaragedPerceptron( X, Y , maxIter)
     T = length(X(:,1));
     iter_count = 0;
     not_converged = true;
-    alpha = 0.1;
     while not_converged,
-        % not_converged = false;
-        for i = 1 : length(X(:,1)),
+       alpha = (maxIter-iter_count)/maxIter;
+        for i = 1 : T,
             if sign(w' * X(i,:)') ~= Y(i)  % y(i) x(i) check correct
                 w = w + alpha * Y(i) * X(i,:)';
                 not_converged = true;

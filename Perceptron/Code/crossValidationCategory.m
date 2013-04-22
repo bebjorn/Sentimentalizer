@@ -7,7 +7,7 @@ mHealth = [textread(strcat(path,'health_neg'));textread(strcat(path,'health_pos'
 mMusic = [textread(strcat(path,'music_neg'));textread(strcat(path,'music_pos'))];
 mSoftware = [textread(strcat(path,'software_neg'));textread(strcat(path,'software_pos'))];
 
-m1Length = 1900;
+m1Length = 1820;
 testLength = m1Length/folds;
 trainLength = m1Length-testLength;
 
@@ -60,17 +60,8 @@ for k = 1:testLength:trainLength,
               a = [mHealth([1:1:k-1, k+testLength:1:m1Length],:);mSoftware([1:1:k-1, k+testLength:1:m1Length], :)];
             otherwise
         end
-        %a(2,:,:) = [mBooks([1:1:k-1, k+testLength:1:m1Length],:);mDvd([1:1:k-1, k+testLength:1:m1Length], :)];
-        %a(3,:,:) = [mBooks([1:1:k-1, k+testLength:1:m1Length],:);mHealth([1:1:k-1, k+testLength:1:m1Length], :)];
-        %a(4,:,:) = [mBooks([1:1:k-1, k+testLength:1:m1Length],:);mMusic([1:1:k-1, k+testLength:1:m1Length], :)];
-        %a(5,:,:) = [mBooks([1:1:k-1, k+testLength:1:m1Length],:);mSoftware([1:1:k-1, k+testLength:1:m1Length], :)];
-        %a(6,:,:) = [mCamera([1:1:k-1, k+testLength:1:m1Length],:);mDvd([1:1:k-1, k+testLength:1:m1Length], :)];
         w(i,:) = perceptron(a,learnMatrix, 50);
-        %w(2,:,:) = perceptron(a(2,:,:),learnMatrix);
-        %w(3,:,:) = perceptron(a(3,:,:),learnMatrix);
-        %w(4,:,:) = perceptron(a(4,:,:),learnMatrix);
-        %w(5,:,:) = perceptron(a(5,:,:),learnMatrix);
-        %w(6,:,:) = perceptron(a(6,:,:),learnMatrix);
+        %w(i,:) = avaragedPerceptron(a,learnMatrix, 50);
         i
     end
     

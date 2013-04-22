@@ -4,8 +4,8 @@ function [ w ] = perceptron( X, Y , maxIter)
     w = randn(length(X(1,:)), 1);
     iter_count = 0;
     not_converged = true;
-    alpha = 0.1;
     while not_converged,
+        alpha = (maxIter-iter_count)/maxIter;
         % not_converged = false;
         for i = 1 : length(X(:,1)),
             if sign(w' * X(i,:)') ~= Y(i)  % y(i) x(i) check correct
