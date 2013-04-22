@@ -1,12 +1,12 @@
 function [ correctness, avarage, count ] = crossValidation(name1, name2, folds)
 %CROSSVALIDATION Summary of this function goes here
 %   Detailed explanation goes here
-path = '../../data/output/OLD/';
+path = '../../data/output/';
 matrix1 = textread(strcat(path,name1));
 matrix2 = textread(strcat(path,name2));
 
-%matrix1 = matrix1 ~= 0;
-%matrix2 = matrix2 ~= 0;
+matrix1 = matrix1 ~= 0;
+matrix2 = matrix2 ~= 0;
 
 m1Length = size(matrix1,1);
 testLength = m1Length/folds;
