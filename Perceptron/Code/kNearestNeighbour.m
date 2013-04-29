@@ -8,9 +8,6 @@ matrix2 = textread(strcat(path,name2));
 %matrix1 = matrix1 ~= 0;
 %matrix2 = matrix2 ~= 0;
 
-matrix1 = [matrix1,ones(size(matrix1,1),1)];
-matrix2 = [matrix2,ones(size(matrix2,1),1)];
-
 Y = [ones(size(matrix1,1),1); ones(size(matrix2,1),1)*-1];
 X = [matrix1;matrix2];
 
