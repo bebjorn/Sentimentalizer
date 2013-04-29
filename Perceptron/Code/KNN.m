@@ -29,6 +29,8 @@ matrix4 = textread(strcat(path,name4));
 Y = [ones(size(matrix1,1),1); ones(size(matrix2,1),1); ones(size(matrix3,1),1)*2; ones(size(matrix4,1),1)*2];
 X = [matrix1;matrix2;matrix3;matrix4];
 
+X = X ~= 0;
+
 load fisheriris
 indices = crossvalind('Kfold',Y,10);
 cp = classperf(Y); % initializes the CP object
