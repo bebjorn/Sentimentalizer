@@ -14,10 +14,10 @@
 %P = kfoldPredict(cvmodel); %
 
 
-name1 = 'books_pos';
-name2 = 'books_neg';
-name3 = 'music_pos';
-name4 = 'music_neg';
+name1 = 'camera_pos';
+name2 = 'camera_neg';
+name3 = 'health_pos';
+name4 = 'health_neg';
 neighbors = 5;
 
 path = '../../data/output/';
