@@ -1,10 +1,13 @@
 function [ correctness, avarage, count ] = crossValidation(name1, name2, folds)
 %CROSSVALIDATION Summary of this function goes here
 %   Detailed explanation goes here
-path = '../../data/tfidf/';
+
+path = '../../data/tfidf/'; % use frequency to test binary or frequency
+
 matrix1 = textread(strcat(path,name1));
 matrix2 = textread(strcat(path,name2));
 
+% uncomment those to use binary
 %matrix1 = matrix1 ~= 0;
 %matrix2 = matrix2 ~= 0;
 

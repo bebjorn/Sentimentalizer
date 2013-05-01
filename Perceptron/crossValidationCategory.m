@@ -1,5 +1,7 @@
 function [ correctness, count ] = crossValidationCategory(folds)
-path = '../../data/tfidf/';
+
+path = '../../data/tfidf/'; % or use the frequency directory
+
 mBooks = [textread(strcat(path,'books_neg'));textread(strcat(path,'books_pos'))];
 mCamera = [textread(strcat(path,'camera_neg'));textread(strcat(path,'camera_pos'))];
 mDvd = [textread(strcat(path,'dvd_neg'));textread(strcat(path,'dvd_pos'))];
@@ -7,6 +9,7 @@ mHealth = [textread(strcat(path,'health_neg'));textread(strcat(path,'health_pos'
 mMusic = [textread(strcat(path,'music_neg'));textread(strcat(path,'music_pos'))];
 mSoftware = [textread(strcat(path,'software_neg'));textread(strcat(path,'software_pos'))];
 
+% uncomment for binary feature
 %mBooks = mBooks ~= 0;
 %mCamera = mCamera ~= 0;
 %mDvd = mDvd ~= 0;
